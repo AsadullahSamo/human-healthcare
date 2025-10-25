@@ -63,3 +63,4 @@ temp/
 # Specify files
 specs
 .github
+.next
