@@ -16,7 +16,7 @@ module.exports = {
           300: '#b8bfe3',
           400: '#939dd4',
           500: '#767fc7',
-          600: '#A048A7', // Main brand color
+          600: '#a048a7', // Main brand color
           700: '#5a5fb8',
           800: '#4a4fa1',
           900: '#3f4282',
@@ -33,7 +33,7 @@ module.exports = {
           800: '#166534',
           900: '#14532d',
         },
-        brand: '#A048A7', // Direct brand color reference
+        brand: '#a048a7', // Direct brand color reference
         gray: {
           50: '#f9fafb',
           100: '#f3f4f6',
@@ -46,6 +46,11 @@ module.exports = {
           800: '#1f2937',
           900: '#111827',
         },
+      },
+      fontFamily: {
+        'montserrat': ['var(--font-montserrat)', 'sans-serif'],
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
+        'dm-sans': ['var(--font-dm-sans)', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
