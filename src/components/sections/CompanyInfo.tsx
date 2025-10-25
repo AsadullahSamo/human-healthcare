@@ -1,11 +1,12 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Star } from 'lucide-react';
+import { companyInfo } from '../../lib/data/content';
 
 export default function CompanyInfo() {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-700">
       <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-        Get in Touch
+        CONNECT WITH HUMAN-HEALTHCARE
       </h3>
 
       <div className="space-y-6">
@@ -13,14 +14,17 @@ export default function CompanyInfo() {
           <MapPin className="w-6 h-6 text-blue-600 mt-1 mr-4 flex-shrink-0" />
           <div>
             <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
-              Address
+              Main Office
             </h4>
             <p className="text-gray-600 dark:text-gray-300">
-              123 Healthcare Boulevard
-              <br />
-              Medical District
-              <br />
-              City, State 12345
+              <a
+                href={companyInfo.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600"
+              >
+                {companyInfo.address}
+              </a>
             </p>
           </div>
         </div>
@@ -29,11 +33,22 @@ export default function CompanyInfo() {
           <Phone className="w-6 h-6 text-blue-600 mt-1 mr-4 flex-shrink-0" />
           <div>
             <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
-              Phone
+              Phone Numbers
             </h4>
             <p className="text-gray-600 dark:text-gray-300">
-              <a href="tel:+15551234567" className="hover:text-blue-600">
-                (555) 123-4567
+              <a
+                href={`tel:${companyInfo.phone}`}
+                className="hover:text-blue-600 block"
+              >
+                {companyInfo.phone}
+              </a>
+              <a
+                href={companyInfo.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600"
+              >
+                {companyInfo.phoneUS} (WhatsApp)
               </a>
             </p>
           </div>
@@ -47,10 +62,10 @@ export default function CompanyInfo() {
             </h4>
             <p className="text-gray-600 dark:text-gray-300">
               <a
-                href="mailto:contact@human-healthcare.com"
+                href={`mailto:${companyInfo.email}`}
                 className="hover:text-blue-600"
               >
-                contact@human-healthcare.com
+                {companyInfo.email}
               </a>
             </p>
           </div>
@@ -63,12 +78,33 @@ export default function CompanyInfo() {
               Hours
             </h4>
             <div className="text-gray-600 dark:text-gray-300 space-y-1">
-              <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
-              <p>Saturday: 9:00 AM - 5:00 PM</p>
-              <p>Sunday: 10:00 AM - 4:00 PM</p>
+              <p>{companyInfo.hours}</p>
               <p className="text-sm font-medium text-blue-600">
                 24/7 Emergency Support Available
               </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-start">
+          <Star className="w-6 h-6 text-yellow-500 mt-1 mr-4 flex-shrink-0" />
+          <div>
+            <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
+              Customer Rating
+            </h4>
+            <div className="text-gray-600 dark:text-gray-300">
+              <span className="text-lg font-bold text-yellow-500">
+                {companyInfo.rating}
+              </span>
+              <span className="ml-2">{companyInfo.reviewCount}</span>
+              <div className="flex mt-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-4 h-4 text-yellow-400 fill-current"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -76,16 +112,11 @@ export default function CompanyInfo() {
 
       <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
         <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
-          Emergency Contact
+          {companyInfo.name}
         </h4>
         <p className="text-gray-600 dark:text-gray-300 mb-2">
-          For urgent medical situations, please call:
-        </p>
-        <p className="text-xl font-bold text-red-600">
-          <a href="tel:+15551234911">(555) 123-4911</a>
-        </p>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-          Available 24/7 for emergencies
+          Trusted healthcare provider serving families across Pakistan and
+          overseas Pakistanis worldwide.
         </p>
       </div>
     </div>

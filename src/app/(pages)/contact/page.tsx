@@ -1,6 +1,20 @@
 import React from 'react';
 import ContactForm from '../../../components/forms/ContactForm';
 import CompanyInfo from '../../../components/sections/CompanyInfo';
+import { generatePageMetadata } from '../../../lib/metadata';
+
+export const metadata = generatePageMetadata({
+  title: 'Contact Us',
+  description:
+    'Get in touch with our healthcare team. Contact Human Healthcare for professional medical services, consultations, and support.',
+  path: '/contact',
+  keywords: [
+    'contact healthcare',
+    'medical consultation',
+    'healthcare support',
+    'schedule appointment',
+  ],
+});
 
 export default function ContactPage() {
   return (
