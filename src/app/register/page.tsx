@@ -16,11 +16,12 @@ const steps = [
           FAQ section
         </Link>
         , and{' '}
-        <Link 
-        href = {{
-            pathname: "/service-agreement"
-        }} 
-        className="text-[#a35966] hover:underline">
+        <Link
+          href={{
+            pathname: '/service-agreement',
+          }}
+          className="text-[#a35966] hover:underline"
+        >
           Service Agreement
         </Link>
         . If it fits with your needs & wishes, please proceed to step 2, Charges
@@ -43,7 +44,7 @@ const steps = [
   },
 ];
 
-function StepItem({ step, index }: { step: typeof steps[0]; index: number }) {
+function StepItem({ step, index }: { step: (typeof steps)[0]; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -100,9 +101,10 @@ export default function RegisterPage() {
             {/* Center Text and Button */}
             <div className="text-center mt-16">
               <p className="font-poppins text-[16px] leading-[22.4px] text-[#767471] mb-8">
-                By Clicking REGISTER NOW, I acknowledge reviewing the FAQ page and approve the Terms & Conditions of Human-Healthcare.com
+                By Clicking REGISTER NOW, I acknowledge reviewing the FAQ page
+                and approve the Terms & Conditions of Human-Healthcare.com
               </p>
-              
+
               <button className="bg-[#a048a7] text-white px-10 py-6 text-[14px] leading-[14px] font-medium hover:bg-[#8a3d8f] transition-colors">
                 Register Now
               </button>

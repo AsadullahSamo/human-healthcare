@@ -48,8 +48,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        'montserrat': ['var(--font-montserrat)', 'sans-serif'],
-        'poppins': ['var(--font-poppins)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'sans-serif'],
         'dm-sans': ['var(--font-dm-sans)', 'sans-serif'],
       },
       animation: {
@@ -67,8 +67,10 @@ module.exports = {
         },
       },
       transitionProperty: {
-        'colors': 'color, background-color, border-color, text-decoration-color, fill, stroke',
-        'theme': 'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform',
+        colors:
+          'color, background-color, border-color, text-decoration-color, fill, stroke',
+        theme:
+          'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform',
       },
     },
   },

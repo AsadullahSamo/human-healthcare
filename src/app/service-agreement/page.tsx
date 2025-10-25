@@ -309,8 +309,8 @@ export default function ServiceAgreementPage() {
                 the right to refuse these services. You understand and intend
                 this consent to be continuing in nature, even after a specific
                 diagnosis has been made and treatment recommended. This consent
-                will remain in full force unless revoked in writing and will
-                not affect any actions that were taken prior to receiving your
+                will remain in full force unless revoked in writing and will not
+                affect any actions that were taken prior to receiving your
                 revocation.
               </p>
 
@@ -353,10 +353,10 @@ export default function ServiceAgreementPage() {
               <p className="font-poppins text-[15px] leading-[25px] text-[#565656]">
                 No rights or licenses are granted except as expressly set forth
                 herein. Without limiting the foregoing, subject to the limited
-                rights expressly granted in this Section 3, all right, title
-                and interest (including all related Intellectual Property
-                Rights) in and to (a) the Services and the Human-Healthcare
-                Technology is retained by Human-Healthcare.
+                rights expressly granted in this Section 3, all right, title and
+                interest (including all related Intellectual Property Rights) in
+                and to (a) the Services and the Human-Healthcare Technology is
+                retained by Human-Healthcare.
               </p>
 
               <h3 className="text-[16px] leading-[22.4px] text-black font-poppins font-bold mt-6">
@@ -440,12 +440,12 @@ export default function ServiceAgreementPage() {
                 quarterly installments, if you prefer. Installment payments are
                 due no later than the last day of the month for which Services
                 were provided. Late payments are not acceptable as they disrupt
-                our coordination of care. Payments that are 30 days overdue
-                will incur a $100.00 reactivation fee. In order to remain
-                financially viable, Human-Healthcare reserves the right to
-                change its fees at any time with 30 days' notice to you. There
-                is a small percentage increase in membership fee every two years
-                based on inflation and other economic metrics. You may end your
+                our coordination of care. Payments that are 30 days overdue will
+                incur a $100.00 reactivation fee. In order to remain financially
+                viable, Human-Healthcare reserves the right to change its fees
+                at any time with 30 days' notice to you. There is a small
+                percentage increase in membership fee every two years based on
+                inflation and other economic metrics. You may end your
                 membership anytime, and any remaining membership fee will be
                 prorated and refunded to you. If you choose to discontinue your
                 membership and you later wish to re-enroll, we reserve the right
@@ -484,8 +484,8 @@ export default function ServiceAgreementPage() {
                 business processes disclosed by such party. However,
                 Confidential Information does not include any information that
                 (a) is or becomes generally known to the public without breach
-                of any obligation owed to the Disclosing Party, (b) was known
-                to the Receiving Party prior to its disclosure by the Disclosing
+                of any obligation owed to the Disclosing Party, (b) was known to
+                the Receiving Party prior to its disclosure by the Disclosing
                 Party without breach of any obligation owed to the Disclosing
                 Party, (c) is received from a third party without breach of any
                 obligation owed to the Disclosing Party, or (d) was
@@ -612,8 +612,8 @@ export default function ServiceAgreementPage() {
                 you to resolve that dispute in good faith, which may require
                 mediation. If we are unsuccessful, final disposition shall be
                 resolved by binding arbitration and enforced by any court of
-                competent jurisdiction. Human-Healthcare will choose the provider
-                of arbitration services.
+                competent jurisdiction. Human-Healthcare will choose the
+                provider of arbitration services.
               </p>
 
               {/* Section 9 */}
@@ -703,10 +703,12 @@ export default function ServiceAgreementPage() {
                     Address:________________________________________________
                   </p>
                   <p className="font-poppins text-[15px] leading-[25px] text-[#565656]">
-                    Phone:_________________ Alternate Phone: _____________________
+                    Phone:_________________ Alternate Phone:
+                    _____________________
                   </p>
                   <p className="font-poppins text-[15px] leading-[25px] text-[#565656]">
-                    Parent's Signature with Dates:__________________________________
+                    Parent's Signature with
+                    Dates:__________________________________
                   </p>
                 </div>
               </div>

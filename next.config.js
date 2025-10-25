@@ -3,6 +3,9 @@ const nextConfig = {
   experimental: {
     typedRoutes: true,
   },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,

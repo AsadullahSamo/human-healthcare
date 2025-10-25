@@ -100,7 +100,6 @@ export default function OurStoryPage() {
         </div>
       </section>
 
-
       {/* Meet Our Founding Members */}
       <section className="py-16 bg-[#f6f6f6]">
         <div className="container mx-auto px-4">
@@ -111,9 +110,9 @@ export default function OurStoryPage() {
 
             {/* Divider with stethoscope icon */}
             <div className="flex items-center mb-8">
-                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
-                <Stethoscope className="w-6 h-6 text-black mx-4" />
-                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+              <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+              <Stethoscope className="w-6 h-6 text-black mx-4" />
+              <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
             </div>
 
             {/* Founding Photos Grid */}
@@ -164,9 +163,9 @@ export default function OurStoryPage() {
 
             {/* Divider with stethoscope icon */}
             <div className="flex items-center mb-8">
-                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
-                <Stethoscope className="w-6 h-6 text-black mx-4" />
-                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+              <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+              <Stethoscope className="w-6 h-6 text-black mx-4" />
+              <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
             </div>
 
             {/* Team Member Stories */}
@@ -222,9 +221,9 @@ export default function OurStoryPage() {
 
             {/* Divider with stethoscope icon (since can't find that doctor image as in referenced website) */}
             <div className="flex items-center mb-8">
-                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
-                <Stethoscope className="w-6 h-6 text-white mx-4" />
-                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+              <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+              <Stethoscope className="w-6 h-6 text-white mx-4" />
+              <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -257,9 +256,9 @@ export default function OurStoryPage() {
 
             {/* Divider with stethoscope icon */}
             <div className="flex items-center mb-8">
-                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
-                <Stethoscope className="w-6 h-6 text-black mx-4" />
-                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+              <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+              <Stethoscope className="w-6 h-6 text-black mx-4" />
+              <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
             </div>
 
             <div className="space-y-6 text-left">

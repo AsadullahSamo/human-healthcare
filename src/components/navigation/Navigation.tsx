@@ -14,6 +14,8 @@ const navigationItems = [
   { name: 'Home', href: '/' as const },
   { name: 'About', href: '/about' as const },
   { name: 'Services', href: '/services' as const },
+  { name: 'FAQs', href: '/faqs' as const },
+  { name: 'Register Now', href: '/register' as const },
   { name: 'Contact', href: '/contact' as const },
 ];
 
@@ -81,20 +83,24 @@ export function Navigation() {
 
   return (
     <nav className="relative" role="navigation" aria-label="Main navigation">
-      <div className="hidden md:flex items-center space-x-8">
+      <div className="hidden md:flex items-center space-x-6">
         {navigationItems.map(item => (
           <Link
             key={item.name}
             href={item.href}
             className={cn(
-              'text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1',
+              'text-sm font-poppins font-medium transition-all duration-200 hover:text-[#a048a7] focus:outline-none focus:ring-2 focus:ring-[#a048a7] focus:ring-offset-2 rounded-md px-3 py-2 relative group',
               pathname === item.href
-                ? 'text-blue-600 dark:text-blue-400'
-                : 'text-gray-700 dark:text-gray-300'
+                ? 'text-[#a048a7] font-semibold'
+                : 'text-[#565656] hover:text-[#a048a7]'
             )}
             aria-current={pathname === item.href ? 'page' : undefined}
           >
             {item.name}
+            {pathname === item.href && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#a048a7] rounded-full"></span>
+            )}
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#a048a7] rounded-full transition-all duration-200 group-hover:w-full"></span>
           </Link>
         ))}
       </div>
@@ -102,7 +108,7 @@ export function Navigation() {
       <button
         ref={buttonRef}
         type="button"
-        className="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="md:hidden p-2 rounded-md text-[#565656] hover:bg-[#a048a7]/10 hover:text-[#a048a7] focus:outline-none focus:ring-2 focus:ring-[#a048a7] focus:ring-offset-2 transition-colors"
         onClick={handleMobileToggle}
         aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={mobileMenuOpen}
@@ -130,7 +136,7 @@ export function Navigation() {
         <div
           ref={menuRef}
           id="mobile-menu"
-          className="absolute top-12 left-0 right-0 md:hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50"
+          className="absolute top-12 left-0 right-0 md:hidden bg-white border-2 border-[#a048a7]/20 rounded-lg shadow-lg z-50"
           role="menu"
           aria-orientation="vertical"
         >
@@ -144,11 +150,12 @@ export function Navigation() {
                 onClick={handleLinkClick}
                 onFocus={() => setFocusedIndex(index)}
                 className={cn(
-                  'block px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
+                  'block px-4 py-3 text-sm font-poppins font-medium transition-colors hover:bg-[#a048a7]/10 hover:text-[#a048a7] focus:outline-none focus:ring-2 focus:ring-[#a048a7] focus:ring-offset-2',
                   pathname === item.href
-                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                    : 'text-gray-700 dark:text-gray-300',
-                  focusedIndex === index && 'ring-2 ring-blue-500 ring-offset-2'
+                    ? 'text-[#a048a7] bg-[#a048a7]/5 font-semibold border-l-4 border-[#a048a7]'
+                    : 'text-[#565656]',
+                  focusedIndex === index &&
+                    'ring-2 ring-[#a048a7] ring-offset-2'
                 )}
                 aria-current={pathname === item.href ? 'page' : undefined}
               >
