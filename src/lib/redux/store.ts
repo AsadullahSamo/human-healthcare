@@ -5,11 +5,13 @@ import {
   useSelector,
   type TypedUseSelectorHook,
 } from 'react-redux';
+import { uiSlice } from './slices/uiSlice';
+import { contactSlice } from './slices/contactSlice';
 
 export const store = configureStore({
   reducer: {
-    // Placeholder - will be replaced with actual slices
-    _placeholder: (state = {}) => state,
+    ui: uiSlice.reducer,
+    contact: contactSlice.reducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
@@ -37,25 +39,35 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 // Helper to get initial state for SSR
 export const getInitialState = () => ({
   ui: {
-    theme: 'system' as const,
-    isDarkMode: false,
-    sidebarOpen: false,
-    mobileMenuOpen: false,
+    theme: {
+      theme: 'system' as const,
+      timestamp: new Date(),
+    },
+    navigation: {
+      currentPath: '/',
+      mobileMenuOpen: false,
+      loading: false,
+    },
   },
   contact: {
-    isLoading: false,
-    error: null,
-    lastSubmission: null,
-    formData: {
+    data: {
       name: '',
       email: '',
       phone: '',
-      company: '',
-      inquiryType: 'general',
+      subject: '',
       message: '',
-      preferredContact: 'email',
-      urgency: 'medium',
     },
+    validation: {
+      name: { isValid: true },
+      email: { isValid: true },
+      phone: { isValid: true },
+      subject: { isValid: true },
+      message: { isValid: true },
+      isFormValid: false,
+    },
+    status: 'idle' as const,
+    statusMessage: '',
+    lastSubmissionAt: undefined,
   },
 });
 
