@@ -3,7 +3,11 @@
 import React, { useEffect, useCallback } from 'react';
 import { useAppDispatch, useAppSelector } from '../lib/redux/store';
 import { setTheme } from '../lib/redux/slices/uiSlice';
-import { getSystemTheme, applyTheme, saveThemePreference } from '../lib/utils/theme';
+import {
+  getSystemTheme,
+  applyTheme,
+  saveThemePreference,
+} from '../lib/utils/theme';
 import type { Theme } from '../types/index';
 
 interface ThemeProviderProps {
@@ -40,18 +44,21 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     applyTheme(initial === 'system' ? getSystemTheme() : initial);
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    if (mediaQuery.addEventListener) mediaQuery.addEventListener('change', handleSystemChange);
+    if (mediaQuery.addEventListener)
+      mediaQuery.addEventListener('change', handleSystemChange);
     else mediaQuery.addListener(handleSystemChange);
 
     return () => {
-      if (mediaQuery.removeEventListener) mediaQuery.removeEventListener('change', handleSystemChange);
+      if (mediaQuery.removeEventListener)
+        mediaQuery.removeEventListener('change', handleSystemChange);
       else mediaQuery.removeListener(handleSystemChange);
     };
   }, [dispatch, handleSystemChange]);
 
   // Persist theme changes
   useEffect(() => {
-    const resolved = currentTheme === 'system' ? getSystemTheme() : currentTheme;
+    const resolved =
+      currentTheme === 'system' ? getSystemTheme() : currentTheme;
     applyTheme(resolved);
     saveThemePreference(currentTheme);
   }, [currentTheme]);
@@ -64,18 +71,31 @@ export function useTheme() {
   const dispatch = useAppDispatch();
   const theme = useAppSelector(state => state.ui.theme.theme);
 
-  const setCurrentTheme = useCallback((newTheme: Theme) => dispatch(setTheme(newTheme)), [dispatch]);
+  const setCurrentTheme = useCallback(
+    (newTheme: Theme) => dispatch(setTheme(newTheme)),
+    [dispatch]
+  );
 
   const toggleTheme = useCallback(() => {
     setCurrentTheme(theme === 'light' ? 'dark' : 'light');
   }, [theme, setCurrentTheme]);
 
-  const resetToSystem = useCallback(() => setCurrentTheme('system'), [setCurrentTheme]);
+  const resetToSystem = useCallback(
+    () => setCurrentTheme('system'),
+    [setCurrentTheme]
+  );
 
   const resolvedTheme = theme === 'system' ? getSystemTheme() : theme;
   const isDark = resolvedTheme === 'dark';
 
-  return { theme, resolvedTheme, isDark, setTheme: setCurrentTheme, toggleTheme, resetToSystem };
+  return {
+    theme,
+    resolvedTheme,
+    isDark,
+    setTheme: setCurrentTheme,
+    toggleTheme,
+    resetToSystem,
+  };
 }
 
 export default ThemeProvider;

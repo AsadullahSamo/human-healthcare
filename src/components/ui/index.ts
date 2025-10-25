@@ -4,9 +4,7 @@ export type { ButtonProps } from './Button';
 export { default as Card } from './Card';
 export type { CardProps } from './Card';
 
-
 export { default as Input, type InputProps } from './Input';
-
 
 // Form components
 // export { default as Form } from './Form';

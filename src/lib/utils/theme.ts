@@ -3,7 +3,9 @@ import type { Theme } from '../../types/index';
 // --- System theme detection ---
 export function getSystemTheme(): 'dark' | 'light' {
   if (typeof window === 'undefined') return 'light'; // SSR fallback
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
 }
 
 export function applyTheme(theme: Theme | 'dark' | 'light'): void {
@@ -22,7 +24,8 @@ export function applyTheme(theme: Theme | 'dark' | 'light'): void {
 // Update mobile browser meta theme-color
 function updateMetaThemeColor(theme: 'dark' | 'light'): void {
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', theme === 'dark' ? '#0f172a' : '#ffffff');
+  if (meta)
+    meta.setAttribute('content', theme === 'dark' ? '#0f172a' : '#ffffff');
 }
 
 // --- LocalStorage persistence ---
@@ -31,7 +34,9 @@ export function saveThemePreference(theme: Theme): void {
   try {
     localStorage.setItem('theme', theme);
     localStorage.setItem('theme-timestamp', new Date().toISOString());
-  } catch { /* ignore localStorage errors */ }
+  } catch {
+    /* ignore localStorage errors */
+  }
 }
 
 export function loadThemePreference(): Theme | null {
@@ -39,7 +44,9 @@ export function loadThemePreference(): Theme | null {
   try {
     const saved = localStorage.getItem('theme') as Theme | null;
     return ['light', 'dark', 'system'].includes(saved || '') ? saved : null;
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 
 export function clearThemePreference(): void {
@@ -55,7 +62,9 @@ export function getThemeTimestamp(): Date | null {
   try {
     const ts = localStorage.getItem('theme-timestamp');
     return ts ? new Date(ts) : null;
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 
 // --- Initialize theme ---
@@ -72,12 +81,15 @@ export function isDarkMode(theme: Theme): boolean {
 }
 
 export function toggleTheme(current: Theme): Theme {
-  if (current === 'system') return getSystemTheme() === 'dark' ? 'light' : 'dark';
+  if (current === 'system')
+    return getSystemTheme() === 'dark' ? 'light' : 'dark';
   return current === 'light' ? 'dark' : 'light';
 }
 
 // --- System theme listener ---
-export function createSystemThemeListener(callback: (isDark: boolean) => void): () => void {
+export function createSystemThemeListener(
+  callback: (isDark: boolean) => void
+): () => void {
   if (typeof window === 'undefined') return () => {};
 
   const media = window.matchMedia('(prefers-color-scheme: dark)');
