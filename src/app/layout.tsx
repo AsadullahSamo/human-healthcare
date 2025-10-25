@@ -6,20 +6,20 @@ import { Header } from '../components/navigation/Header';
 import Footer from '../components/navigation/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '600', '700'],
-  variable: '--font-montserrat'
+  variable: '--font-montserrat',
 });
-const poppins = Poppins({ 
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins'
+  variable: '--font-poppins',
 });
-const dmSans = DM_Sans({ 
+const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
-  variable: '--font-dm-sans'
+  variable: '--font-dm-sans',
 });
 
 export const metadata: Metadata = {
@@ -37,7 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} ${montserrat.variable} ${poppins.variable} ${dmSans.variable}`}>
+      <body
+        className={`${inter.className} ${montserrat.variable} ${poppins.variable} ${dmSans.variable}`}
+      >
         <Providers>
           <div className="flex min-h-screen flex-col">
             <Header />
