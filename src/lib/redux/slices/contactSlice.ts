@@ -36,35 +36,54 @@ export const contactSlice = createSlice({
   name: 'contact',
   initialState,
   reducers: {
-    updateField(state, action: PayloadAction<{ field: keyof ContactInquiryRequest; value: string }>) {
+    updateField(
+      state,
+      action: PayloadAction<{
+        field: keyof ContactInquiryRequest;
+        value: string;
+      }>
+    ) {
       const { field, value } = action.payload;
       state.data[field] = value;
-      if (state.validation[field].error) state.validation[field] = { isValid: true };
+      if (state.validation[field].error)
+        state.validation[field] = { isValid: true };
     },
 
-    updateFormData(state, action: PayloadAction<Partial<ContactInquiryRequest>>) {
+    updateFormData(
+      state,
+      action: PayloadAction<Partial<ContactInquiryRequest>>
+    ) {
       state.data = { ...state.data, ...action.payload };
     },
 
     setFieldValidation(
       state,
-      action: PayloadAction<{ field: keyof ContactInquiryRequest; validation: FieldValidation }>
+      action: PayloadAction<{
+        field: keyof ContactInquiryRequest;
+        validation: FieldValidation;
+      }>
     ) {
       const { field, validation } = action.payload;
       state.validation[field] = validation;
       state.validation.isFormValid = Object.entries(state.validation)
         .filter(([k]) => k !== 'isFormValid')
-        .every(([k]) => state.validation[k as keyof ContactInquiryRequest].isValid);
+        .every(
+          ([k]) => state.validation[k as keyof ContactInquiryRequest].isValid
+        );
     },
 
     setFormValidation(
       state,
-      action: PayloadAction<Partial<Omit<ContactFormState['validation'], 'isFormValid'>>>
+      action: PayloadAction<
+        Partial<Omit<ContactFormState['validation'], 'isFormValid'>>
+      >
     ) {
       state.validation = { ...state.validation, ...action.payload };
       state.validation.isFormValid = Object.entries(state.validation)
         .filter(([k]) => k !== 'isFormValid')
-        .every(([k]) => state.validation[k as keyof ContactInquiryRequest].isValid);
+        .every(
+          ([k]) => state.validation[k as keyof ContactInquiryRequest].isValid
+        );
     },
 
     setFormValid(state, action: PayloadAction<boolean>) {
@@ -73,7 +92,8 @@ export const contactSlice = createSlice({
 
     setSubmissionStatus(state, action: PayloadAction<SubmissionStatus>) {
       state.status = action.payload;
-      if (action.payload === 'submitting') state.statusMessage = 'Sending your message...';
+      if (action.payload === 'submitting')
+        state.statusMessage = 'Sending your message...';
     },
 
     setStatusMessage(state, action: PayloadAction<string>) {
@@ -110,7 +130,10 @@ export const contactSlice = createSlice({
 
       Object.entries(errors).forEach(([field, error]) => {
         if (field in state.validation) {
-          state.validation[field as keyof ContactInquiryRequest] = { isValid: false, error };
+          state.validation[field as keyof ContactInquiryRequest] = {
+            isValid: false,
+            error,
+          };
         }
       });
 
@@ -168,18 +191,26 @@ export const {
 
 // --- Selectors ---
 export const selectContactFormData = (s: RootState) => s.forms.contact.data;
-export const selectContactFormValidation = (s: RootState) => s.forms.contact.validation;
+export const selectContactFormValidation = (s: RootState) =>
+  s.forms.contact.validation;
 export const selectContactFormStatus = (s: RootState) => s.forms.contact.status;
-export const selectContactStatusMessage = (s: RootState) => s.forms.contact.statusMessage;
-export const selectContactLastSubmission = (s: RootState) => s.forms.contact.lastSubmissionAt;
-export const selectContactFormValid = (s: RootState) => s.forms.contact.validation.isFormValid;
+export const selectContactStatusMessage = (s: RootState) =>
+  s.forms.contact.statusMessage;
+export const selectContactLastSubmission = (s: RootState) =>
+  s.forms.contact.lastSubmissionAt;
+export const selectContactFormValid = (s: RootState) =>
+  s.forms.contact.validation.isFormValid;
 export const selectContactFieldValidation =
-  (field: keyof ContactInquiryRequest) => (s: RootState) => s.forms.contact.validation[field];
+  (field: keyof ContactInquiryRequest) => (s: RootState) =>
+    s.forms.contact.validation[field];
 
 // computed
-export const selectContactFormIsBusy = (s: RootState) => s.forms.contact.status === 'submitting';
-export const selectContactFormHasError = (s: RootState) => s.forms.contact.status === 'error';
-export const selectContactFormIsSuccess = (s: RootState) => s.forms.contact.status === 'success';
+export const selectContactFormIsBusy = (s: RootState) =>
+  s.forms.contact.status === 'submitting';
+export const selectContactFormHasError = (s: RootState) =>
+  s.forms.contact.status === 'error';
+export const selectContactFormIsSuccess = (s: RootState) =>
+  s.forms.contact.status === 'success';
 
 // --- Reducer ---
 export default contactSlice.reducer;

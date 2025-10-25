@@ -17,7 +17,7 @@ export const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    // Set theme preference 
+    // Set theme preference
     setTheme(state, action: PayloadAction<Theme>) {
       state.theme.theme = action.payload;
       state.theme.timestamp = new Date();
@@ -76,10 +76,14 @@ export const {
 
 // --- Selectors ---
 export const selectTheme = (state: RootState) => state.ui.theme.theme;
-export const selectThemeTimestamp = (state: RootState) => state.ui.theme.timestamp;
-export const selectCurrentPath = (state: RootState) => state.ui.navigation.currentPath;
-export const selectMobileMenuOpen = (state: RootState) => state.ui.navigation.mobileMenuOpen;
-export const selectNavigationLoading = (state: RootState) => state.ui.navigation.loading;
+export const selectThemeTimestamp = (state: RootState) =>
+  state.ui.theme.timestamp;
+export const selectCurrentPath = (state: RootState) =>
+  state.ui.navigation.currentPath;
+export const selectMobileMenuOpen = (state: RootState) =>
+  state.ui.navigation.mobileMenuOpen;
+export const selectNavigationLoading = (state: RootState) =>
+  state.ui.navigation.loading;
 
 // --- Reducer ---
 export default uiSlice.reducer;
