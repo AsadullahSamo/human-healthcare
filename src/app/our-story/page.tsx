@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { Facebook, Twitter, CheckCheck } from 'lucide-react';
+import { Facebook, Twitter, CheckCheck, Stethoscope } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Our Story - Human Healthcare',
@@ -100,41 +100,21 @@ export default function OurStoryPage() {
         </div>
       </section>
 
-      {/* Company Introduction */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-[#a048a7] mb-6">
-                About Human Health Care Services
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Human Health Care Services Pvt Ltd is a pioneering Pakistani
-                healthcare company that brings professional medical services
-                directly to your doorstep. We specialize in providing
-                comprehensive home healthcare solutions including nursing care,
-                doctor visits, physiotherapy, attendant services, and domestic
-                help.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                An idea of Human Health LLC, a US-based startup, Human Health
-                Care Services Pvt Ltd is headquartered at E40, PRECHS, Bl 10A,
-                Gulshan-e-Iqbal, Karachi, Pakistan. We bridge the gap between
-                quality healthcare and accessibility, ensuring that every family
-                receives the care they deserve in the comfort of their own home.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Meet Our Founding Members */}
-      <section className="py-16">
+      <section className="py-16 bg-[#f6f6f6]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-[45px] leading-[63px] text-[#000000] font-bold text-center mb-12 font-montserrat">
-              Meet Our Founding Members
+            <h2 className="text-[45px] leading-[63px] text-[#000000] font-semibold text-center mb-12 font-montserrat">
+              MEET OUR FOUNDING MEMBERS
             </h2>
+
+            {/* Divider with stethoscope icon */}
+            <div className="flex items-center mb-8">
+                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+                <Stethoscope className="w-6 h-6 text-black mx-4" />
+                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+            </div>
 
             {/* Founding Photos Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -182,8 +162,12 @@ export default function OurStoryPage() {
               ))}
             </div>
 
-            {/* HR Separator */}
-            <hr className="border-t-2 border-[#a048a7] my-12" />
+            {/* Divider with stethoscope icon */}
+            <div className="flex items-center mb-8">
+                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+                <Stethoscope className="w-6 h-6 text-black mx-4" />
+                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+            </div>
 
             {/* Team Member Stories */}
             {teamMembers.map((member, index) => (
@@ -193,7 +177,7 @@ export default function OurStoryPage() {
                 >
                   {/* Photo */}
                   <div className="flex-shrink-0">
-                    <div className="w-80 h-80 overflow-hidden rounded-lg">
+                    <div className="w-80 h-[450px] overflow-hidden rounded-3xl">
                       <Image
                         src={member.image}
                         alt={member.name}
@@ -206,7 +190,7 @@ export default function OurStoryPage() {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-[24px] leading-[31.2px] text-[#111] font-thin hover:underline cursor-pointer mb-4 font-montserrat">
+                    <h3 className="text-[24px] leading-[31.2px] text-[#000] font-semibold hover:underline cursor-pointer mb-4 font-montserrat">
                       {member.name}
                     </h3>
                     <p className="text-[15px] leading-[22.4px] text-[#111111] font-poppins">
@@ -229,18 +213,25 @@ export default function OurStoryPage() {
       <section className="bg-[#343434] py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-[45px] leading-[63px] text-[#ffffff] font-thin text-center mb-4 font-montserrat">
-              Human Advisors and Consultants
+            <h2 className="text-[45px] leading-[63px] text-[#ffffff] font-semibold text-center mb-4 font-montserrat">
+              HUMAN ADVISORS AND CONSULTANTS
             </h2>
-            <p className="text-[45px] leading-[63px] text-[#ffffff] font-thin text-center mb-12 font-montserrat">
-              empowering healthcare in Pakistan:
+            <p className="text-[45px] leading-[63px] text-[#ffffff] font-semibold text-center mb-12 font-montserrat">
+              EMPOWERING HEALTHCARE IN PAKISTAN
             </p>
+
+            {/* Divider with stethoscope icon (since can't find that doctor image as in referenced website) */}
+            <div className="flex items-center mb-8">
+                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+                <Stethoscope className="w-6 h-6 text-white mx-4" />
+                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {advisors.map((advisor, index) => (
                 <div key={index} className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-[#a048a7] border border-[#a048a7] flex items-center justify-center flex-shrink-0">
-                    <CheckCheck className="w-4 h-4 text-white" />
+                  <div className="size-12 bg-[#a048a7] border border-[#a048a7] flex items-center justify-center flex-shrink-0">
+                    <CheckCheck className="size-8 text-white font-bold" />
                   </div>
                   <p className="text-[17px] leading-[22px] text-[#ffffff] font-dm-sans">
                     {advisor}
@@ -253,16 +244,23 @@ export default function OurStoryPage() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-[#f6f6f6] py-16">
+      <section className="bg-[#ece9df] py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block bg-[#a048a7] text-white px-4 py-2 rounded mb-8">
-              <span className="text-[15px] font-medium">OUR SERVICES</span>
+            <div className="inline-block text-[#a048a7] px-4 py-2 rounded ">
+              <span className="text-[18px] font-medium">OUR SERVICES</span>
             </div>
 
             <h2 className="text-[45px] leading-[63px] text-[#000000] font-semibold mb-12 font-poppins">
               WORLD CLASS HEALTH CARE AT YOUR DOORSTEP
             </h2>
+
+            {/* Divider with stethoscope icon */}
+            <div className="flex items-center mb-8">
+                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+                <Stethoscope className="w-6 h-6 text-black mx-4" />
+                <div className="flex-1 h-[2px] w-2 bg-[#a048a7]"></div>
+            </div>
 
             <div className="space-y-6 text-left">
               <p className="text-[16px] leading-[25.6px] text-[#111111] font-poppins">

@@ -6,7 +6,6 @@ import {
   ArrowRight,
   MapPin,
   Phone,
-  
   Mail,
   Clock,
   Stethoscope,
@@ -123,11 +122,11 @@ export default function FAQsPage() {
       </section>
 
       {/* Two Column Section */}
-      <section className="py-16">
+      <section className="py-16 bg-[#f6f6f6]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Left Side - For Other Questions */}
-            <div className="flex-1">
+            <div className="flex-1 pt-48">
               <div className="relative">
                 <h2 className="font-montserrat font-semibold text-[45px] leading-[63px] text-black mb-4">
                   <span className="relative">
@@ -174,8 +173,8 @@ export default function FAQsPage() {
       </section>
 
       {/* FAQ Items */}
-      <section className="py-8">
-        <div className="w-full">
+      <section className="py-8 bg-[#f6f6f6]">
+        <div className="w-full font-semibold">
           {faqs.map(faq => (
             <FAQItem
               key={faq.id}
@@ -260,7 +259,7 @@ export default function FAQsPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="bg-[#a048a7] text-white px-10 py-6 text-[14px] leading-[14px] font-medium hover:bg-[#8a3d8f] transition-colors"
+                  className="bg-[#a048a7] text-white px-12 py-6 text-[16px] leading-[14px] font-medium hover:bg-[#8a3d8f] transition-colors"
                 >
                   Submit
                 </button>
