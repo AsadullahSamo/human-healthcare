@@ -93,6 +93,9 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
+              <Button size="md" variant="primary" className="mt-6 w-full">
+                Book This Service
+              </Button>
             </Card>
           ))}
         </div>
@@ -106,8 +109,15 @@ export default function ServicesPage() {
             can help you receive quality care at home.
           </p>
           <Link href="/contact">
-            <Button size="lg">Schedule a Consultation</Button>
+            <Button size="lg" variant="primary">
+              Schedule a Consultation
+            </Button>
           </Link>
+          <div className="mt-4">
+            <Button size="lg" variant="outline">
+              Call (555) 123-4567
+            </Button>
+          </div>
         </div>
       </div>
     </div>
