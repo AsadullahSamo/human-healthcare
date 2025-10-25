@@ -51,44 +51,39 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Input
-          label="Full Name"
+          label="First Name"
           {...register('name')}
           error={errors.name?.message}
-          placeholder="Enter your full name"
+          placeholder="Enter your first name"
+          labelClassName="text-[#4048A7] font-medium"
         />
         <Input
-          label="Email Address"
-          type="email"
-          {...register('email')}
-          error={errors.email?.message}
-          placeholder="Enter your email"
+          label="Last Name"
+          type="text"
+          {...register('lastName')}
+          error={errors.lastName?.message}
+          placeholder="Enter your last name"
+          labelClassName="text-[#4048A7] font-medium"
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Input
-          label="Phone Number (Optional)"
-          type="tel"
-          {...register('phone')}
-          error={errors.phone?.message}
-          placeholder="+92 300 123 4567"
-        />
-        <Input
-          label="Subject (Optional)"
-          {...register('subject')}
-          error={errors.subject?.message}
-          placeholder="Subject of your inquiry"
-        />
-      </div>
+      <Input
+        label="Email"
+        type="email"
+        {...register('email')}
+        error={errors.email?.message}
+        placeholder="Enter your email address"
+        labelClassName="text-[#4048A7] font-medium"
+      />
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+        <label className="block text-sm font-medium text-[#4048A7] dark:text-gray-300 mb-1">
           Message
         </label>
         <textarea
           {...register('message')}
           rows={6}
-          className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500"
+          className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4048A7] focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500"
           placeholder="Please describe your healthcare needs or questions..."
         />
         {errors.message && (

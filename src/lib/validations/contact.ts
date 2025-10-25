@@ -11,6 +11,16 @@ const nameSchema = z
   )
   .transform(v => v.trim());
 
+const lastNameSchema = z
+  .string()
+  .min(2, 'Last name must be at least 2 characters long')
+  .max(100, 'Last name must not exceed 100 characters')
+  .regex(
+    /^[a-zA-Z\s\-']+$/,
+    'Last name can only contain letters, spaces, hyphens, and apostrophes'
+  )
+  .transform(v => v.trim());
+
 const emailSchema = z
   .string()
   .email('Please enter a valid email address')
@@ -51,9 +61,8 @@ const messageSchema = z
 // Contact form schema
 export const contactFormSchema = z.object({
   name: nameSchema,
+  lastName: lastNameSchema,
   email: emailSchema,
-  phone: z.string().optional(),
-  subject: z.string().optional(),
   message: messageSchema,
 });
 
@@ -62,9 +71,8 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 // Reusable field schemas
 export const fieldSchemas = {
   name: nameSchema,
+  lastName: lastNameSchema,
   email: emailSchema,
-  phone: phoneSchema,
-  subject: subjectSchema,
   message: messageSchema,
 } as const;
 
@@ -102,9 +110,8 @@ export function validateContactForm(data: unknown) {
 export function sanitizeContactForm(data: ContactFormData): ContactFormData {
   return {
     name: data.name.trim(),
+    lastName: data.lastName.trim(),
     email: data.email.trim().toLowerCase(),
-    phone: data.phone?.trim() || undefined,
-    subject: data.subject?.trim() || undefined,
     message: data.message.trim(),
   };
 }
@@ -125,9 +132,8 @@ export const formatValidationErrors = (errors: Record<string, string>) => {
 // Defaults and metadata
 export const defaultContactFormValues: ContactFormData = {
   name: '',
+  lastName: '',
   email: '',
-  phone: undefined,
-  subject: undefined,
   message: '',
 };
 

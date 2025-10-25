@@ -3,11 +3,11 @@ import { cn } from '../../lib/utils/cn';
 import type { ButtonProps } from '../../types/index';
 
 const buttonVariants = {
-  primary: 'bg-blue-600 hover:bg-blue-700 text-white',
+  primary: 'bg-[#4048A7] hover:bg-[#3538a0] text-white',
   secondary: 'bg-gray-600 hover:bg-gray-700 text-white',
   healthcare: 'bg-green-600 hover:bg-green-700 text-white',
   outline:
-    'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+    'border-2 border-[#4048A7] text-[#4048A7] hover:bg-[#4048A7] hover:text-white',
   ghost:
     'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800',
 };
@@ -36,7 +36,7 @@ export function Button({
       onClick={onClick}
       aria-disabled={disabled || loading}
       className={cn(
-        'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed',
+        'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#4048A7] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed',
         buttonVariants[variant],
         buttonSizes[size],
         className

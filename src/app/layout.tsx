@@ -3,13 +3,16 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from '../components/Providers';
 import { Header } from '../components/navigation/Header';
-import { Footer } from '../components/navigation/Footer';
+import Footer from '../components/navigation/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Human Healthcare',
   description: 'Professional healthcare services at your doorstep',
+  icons: {
+    icon: '/images/favicon.ico',
+  },
 };
 
 export default function RootLayout({

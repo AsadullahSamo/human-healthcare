@@ -39,13 +39,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link
                 href="/contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+                className="bg-[#A048A7] hover:bg-[#3538a0] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
               >
                 {heroContent.primaryButton}
               </Link>
               <Link
                 href="/services"
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+                className="border-2 border-[#A048A7] text-[#A048A7] hover:bg-[#A048A7] hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
               >
                 {heroContent.secondaryButton}
               </Link>
@@ -54,7 +54,7 @@ export default function HomePage() {
               {heroContent.features.map((feature, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-blue-100 dark:bg-blue-900 rounded-lg p-3 mb-2">
-                    <span className="text-blue-600 dark:text-blue-400 font-medium text-sm">
+                    <span className="text-[#A048A7] dark:text-blue-400 font-medium text-sm">
                       {feature}
                     </span>
                   </div>
@@ -167,7 +167,7 @@ export default function HomePage() {
                 key={plan.id}
                 className={`rounded-lg shadow-lg overflow-hidden ${
                   plan.popular
-                    ? 'border-2 border-blue-500 bg-white dark:bg-gray-800'
+                    ? 'border-2 border-[#A048A7] bg-white dark:bg-gray-800'
                     : 'bg-white dark:bg-gray-800'
                 }`}
               >
@@ -176,10 +176,10 @@ export default function HomePage() {
                     {plan.name}
                   </h3>
                   <div className="mb-4">
-                    <span className="text-4xl font-bold text-gray-900 dark:text-white">
+                    <span className="text-4xl font-bold text-[#A048A7] dark:text-white">
                       {plan.price}
                     </span>
-                    <span className="text-2xl text-gray-500 dark:text-gray-400">
+                    <span className="text-2xl text-[#A048A7] dark:text-gray-400">
                       /{plan.priceLocal}
                     </span>
                     <span className="text-gray-500 dark:text-gray-400 block">
@@ -211,7 +211,7 @@ export default function HomePage() {
                   </ul>
                   <Link
                     href="/contact"
-                    className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+                    className="block w-full bg-[#A048A7] hover:bg-[#3538a0] text-white text-center py-3 rounded-lg font-semibold transition-colors"
                   >
                     {plan.buttonText}
                   </Link>
@@ -231,7 +231,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {companyStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                <div className="text-4xl font-bold text-[#A048A7] dark:text-blue-400 mb-2">
                   {stat.value}
                   {stat.suffix}
                 </div>

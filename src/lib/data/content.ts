@@ -13,7 +13,7 @@ export const services = [
       'Health Monitoring',
       'Medication Management',
     ],
-    price: 'Starting at Rs. 13,500/month',
+    price: 'Starting at Rs. . 13,500/month',
   },
   {
     id: 'elderly-care',
@@ -27,7 +27,7 @@ export const services = [
       'Emergency Response',
       'Family Updates',
     ],
-    price: 'Starting at Rs. 27,000/month',
+    price: 'Starting at Rs. . 27,000/month',
   },
   {
     id: 'physiotherapy',
@@ -50,7 +50,7 @@ export const pricingPlans = [
     id: 'essential',
     name: 'Humancare Essential',
     price: '$49.00',
-    priceLocal: 'Rs. 13,500',
+    priceLocal: 'Rs. . 13,500',
     period: 'Per Month',
     description:
       'Perfect for members who are overall healthy, desire minimal medical interventions, and prioritize excellent preventive primary care to lead a long, healthy life.',
@@ -69,7 +69,7 @@ export const pricingPlans = [
     id: 'premium',
     name: 'Humancare Premium',
     price: '$99.00',
-    priceLocal: 'Rs. 27,000',
+    priceLocal: 'Rs. . 27,000',
     period: 'Per Month',
     description:
       'Best suited for most parents or individuals aged over 60 who seek an enhanced healthcare experience that includes regular monitoring, physical therapy, personalized medication delivery, and crucial annual screenings.',

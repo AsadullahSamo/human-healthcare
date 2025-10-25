@@ -6,10 +6,14 @@ export interface InputProps
   className?: string;
   error?: string;
   label?: string;
+  labelClassName?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type = 'text', error, label, id, ...props }, ref) => {
+  (
+    { className, type = 'text', error, label, labelClassName, id, ...props },
+    ref
+  ) => {
     const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
     const errorId = error ? `${inputId}-error` : undefined;
 
@@ -18,7 +22,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            className={cn(
+              'block text-sm font-medium text-gray-700 dark:text-gray-300',
+              labelClassName
+            )}
           >
             {label}
           </label>
